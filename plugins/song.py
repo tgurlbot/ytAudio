@@ -28,7 +28,7 @@ async def start(client, message):
     )
 @Client.on_message(filters.command(['about']))
 async def about(client, message):
-       await message.reply("**📝 Language:** [Python 3](https://www.python.org/)\n\n**📚 Framework:** [Pyrogram](https://github.com/pyrogram/pyrogram)\n\n**📡 Hosted On:** [Railway](http://Railway.app/)", disable_web_page_preview=True, 
+       await message.reply("**📝 Language:** [Python 3](https://www.python.org/)\n\n**📚 Framework:** [Pyrogram](https://github.com/pyrogram/pyrogram)\n\n**📡 Hosted On:** [Heroku](https://heroku.com)", disable_web_page_preview=True, 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
