@@ -17,7 +17,7 @@ def time_to_seconds(time):
 ## Commands --------
 @Client.on_message(filters.command(['start']))
 async def start(client, message):
-       await message.reply(f"Hi {message.from_user.mention()} !\nI'm YT Audio Downloader\nSend me any YT link or song name\n& I'll send the audio to you on Telegram.",
+       await message.reply(f"Hi {message.from_user.mention()} !\nI'm YT Audio Downloader\nSend me any YT link or song name",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
