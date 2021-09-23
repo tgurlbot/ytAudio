@@ -17,22 +17,25 @@ def time_to_seconds(time):
 ## Commands --------
 @Client.on_message(filters.command(['start']))
 async def start(client, message):
-       await message.reply(f"Hi {message.from_user.mention()} !\nI'm YT Audio Downloader\nSend me any YT link or song name",
+       await message.reply(f"Hi {message.from_user.mention()} !\nI'm YT Audio Downloader with inline support\nSend me any YT link or song name",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Search Inline', switch_inline_query_current_chat='')
+                    InlineKeyboardButton('⭕ Channel', url='https://telegram.me/MyTestBotZ'),
+                    InlineKeyboardButton('🦋 Creator', url='https://telegram.me/OO7Robot')
+                    ],[
+                    InlineKeyboardButton('Search Inline 🔎', switch_inline_query_current_chat='')
                 ]
             ]
         )
     )
 @Client.on_message(filters.command(['about']))
 async def about(client, message):
-       await message.reply("**📝 Language:** [Python 3](https://www.python.org/)\n\n**📚 Framework:** [Pyrogram](https://github.com/pyrogram/pyrogram)\n\n**📡 Hosted On:** [Heroku](https://heroku.com)", disable_web_page_preview=True, 
+       await message.reply("**Hey👋, I'm a MultiUploadBot Created for [Him](https://telegram.me/OO7ROBot)...**\n\n**💬 Channel:** [MytestBotZ](https://telegram.me/Mytestbotz)\n\n**📝 Language:** [Python 3](https://www.python.org/)\n\n**📚 Framework:** [Pyrogram](https://github.com/pyrogram/pyrogram)\n\n**📡 Hosted On:** [Heroku](https://heroku.com)", disable_web_page_preview=True, 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Developer', url='https://t.me/FeelDeD')
+                    InlineKeyboardButton('🦋 Channel 🦋', url='https://t.me/mytestbotz')
                 ]
             ]
         )
@@ -41,7 +44,7 @@ async def about(client, message):
 def a(client, message):
     query=message.text
     print(query)
-    m = message.reply('`Downloading ...`')
+    m = message.reply('`Downloading from YouTube...📥`')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -79,13 +82,13 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("`Uploading ...`")
+    m.edit("`Uploading to TG...📤`")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep =  f"**Title:** [{title[:35]}]({link})\n**Duration:** `{duration}`\n**Views:** `{views}`"
+        rep =  f"**Title:** [{title[:35]}]({link})\n**Duration:** `{duration}`\n**Views:** `{views}`\n\n**© @TG_YTbot**"
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
