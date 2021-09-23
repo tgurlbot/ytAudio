@@ -10,7 +10,7 @@ if __name__ == "__main__" :
         root="plugins"
     )
     bot = Client(
-        "YtauBot",
+        "YoutubeAudioBot",
         bot_token=BOT_TOKEN,
         api_hash=API_HASH,
         api_id=API_ID,
